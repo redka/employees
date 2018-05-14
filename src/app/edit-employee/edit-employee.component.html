@@ -1,0 +1,32 @@
+<form ng-cloak>
+  <div class="md-toolbar-tools">
+    <h4>Edit</h4>
+  </div>
+
+  <md-dialog-content>
+    <div class="md-dialog-content">
+
+      <md-input-container class="md-block">
+        <label>Full Name</label>
+        <input ng-model="$ctrl.employee.fullName">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Department</label>
+        <input ng-model="$ctrl.employee.department">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Notes</label>
+        <input ng-model="$ctrl.employee.notes">
+      </md-input-container>
+
+    </div>
+  </md-dialog-content>
+
+  <!-- dialog box buttons -->
+  <md-dialog-actions layout="row">
+    <md-button ui-sref="employees">Cancel</md-button>
+    <md-button ng-click="$ctrl.edit()" class="md-primary">Update</md-button>
+  </md-dialog-actions>
+</form>

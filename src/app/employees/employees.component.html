@@ -1,0 +1,51 @@
+<div layout="row" layout-align="center center">
+
+  <div class="table-employees">
+    <div layout-gt-sm="row" layout-align="right">
+      <md-button class="md-raised md-primary" ui-sref="createEmployee">Add</md-button>
+    </div>
+    <div>
+      <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <thead>
+          <tr>
+            <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+              <span>#</span>
+              <span class="arrow"></span>
+            </th>
+
+            <th sortable="placed" class="sortable">
+              <span>Employee</span>
+              <span class="arrow"></span>
+            </th>
+            <th sortable="placed" class="sortable">
+              <span>Department</span>
+              <span class="arrow"></span>
+            </th>
+            <th sortable="placed" class="sortable">
+              <span>Edit</span>
+            </th>
+            <th sortable="placed" class="sortable">
+              <span>Delete</span>
+            </th>
+
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <tr grid-item ng-repeat="item in $ctrl.employees">
+            <td class="mdl-data-table__cell--non-numeric">
+              <span ng-bind="item.id"></span>
+            </td>
+            <td ng-bind="item.fullName"></td>
+            <td ng-bind="item.department"></td>
+            <td><md-button class="md-primary" ui-sref="editEmployee({ id: item.id })">Edit</md-button></td>
+            <td><md-button class="md-primary" ng-click="$ctrl.delete(item)">Delete</md-button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<confirm-delete></confirm-delete>

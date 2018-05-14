@@ -1,0 +1,29 @@
+//@import '../node_modules/todomvc-common/base';
+//@import '../node_modules/todomvc-app-css/index';
+//@import '../node_modules/angular-material/angular-material.css';
+
+.title-name {
+  margin-left: 10px;
+}
+
+app-root {
+  display: block;
+}
+
+.login-form {
+  height: 100vh;
+}
+.table-employees {
+  width: 90%;
+  margin-top: 40px;
+}
+table {
+  width: 100%;
+}
+table thead th {
+  text-align: left !important;
+  font-size: 14px !important;
+}
+table tbody td {
+  text-align: left !important;
+}

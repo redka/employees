@@ -1,0 +1,30 @@
+<md-content layout="row" layout-align="center center" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span>Welcome bro</span></h2>
+      </div>
+    </md-toolbar>
+    <md-card-content>
+      <form name="Form">
+        <md-input-container class="md-block">
+          <label>E-mail</label>
+          <input type="email" name="email" ng-model="$ctrl.user.email" required=""/>
+          <!--<p>{{Form.email.$error}}</p>-->
+          <div ng-messages="Form.email.$error" role="alert">
+            <div ng-message="required" class="my-message">Please enter your email.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Password</label>
+          <input type="password" name="password" ng-model="$ctrl.user.password" required="" md-maxlength="10"/>
+          <div ng-messages="Form.password.$error" role="alert" multiple="">
+            <div ng-message="required" class="my-message">Please enter your password.</div>
+            <div ng-message="md-maxlength" class="my-message">Too long.</div>
+          </div>
+        </md-input-container>
+        <md-button ng-disabled="!Form.$valid" ng-click="$ctrl.login(Form)" class="md-raised md-primary">&nbsp Login &nbsp</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+</md-content>
