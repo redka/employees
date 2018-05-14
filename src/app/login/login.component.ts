@@ -13,13 +13,16 @@ export const LoginComponent = {
       email: '',
       password: ''
     };
+    serverError: string;
 
     $location: angular.ILocationService;
     Auth: ApiService;
+    $timeout: angular.ITimeoutService;
 
-    constructor($location, ApiService) {
+    constructor($location, $timeout, ApiService) {
       this.$location = $location;
       this.Auth = ApiService;
+      this.$timeout = $timeout;
     }
 
     login(form) {
@@ -30,10 +33,16 @@ export const LoginComponent = {
           password: this.user.password
         })
           .then((success) => {
-            console.log(success);
-            this.$location.path('/');
+            if (success.status === 422) {
+              this.serverError = success.statusText;
+              this.$timeout(() => {
+                this.serverError = '';
+              }, 3000);
+            } else {
+              this.$location.path('/');
+            }
           })
-          .catch(err => {
+          .catch((err) => {
             console.log(err);
           });
       }

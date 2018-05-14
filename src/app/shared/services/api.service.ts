@@ -18,15 +18,14 @@ export class ApiService {
   }
 
   login({email, password}) {
-
-
     return this.$http.post(API.url + '/login', { email, password })
-      .then(res => {
-        this.$cookies.put('token', JSON.stringify(res['data']['uri']));
-        return res;
+      .then((res) => {
+        let token: any = res.data;
+        this.$cookies.put('token', token);
+        return true;
       })
       .catch(err => {
-        this.logout();
+        return err;
       });
   };
 

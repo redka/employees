@@ -22,6 +22,7 @@
             <div ng-message="required" class="my-message">Please enter your password.</div>
             <div ng-message="md-maxlength" class="my-message">Too long.</div>
           </div>
+          <div class="my-message md-input-message-animation" ng-if="$ctrl.serverError">{{$ctrl.serverError}}</div>
         </md-input-container>
         <md-button ng-disabled="!Form.$valid" ng-click="$ctrl.login(Form)" class="md-raised md-primary">&nbsp Login &nbsp</md-button>
       </form>

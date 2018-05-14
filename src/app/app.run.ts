@@ -8,9 +8,9 @@ export function AppRun(
 ) {
 
   $rootScope.$on('$locationChangeStart',  (event, next, current) => {
-    // if(!$cookies.get('token')) {
-    //   $location.path('/login');
-    // }
+    if(!$cookies.get('token')) {
+      $location.path('/login');
+    }
   });
 
 
@@ -30,6 +30,22 @@ export function AppRun(
   ];
   let host = 'http://localhost:8080';
 
+  let user: any = {
+    email: 'example@me',
+    password: 'password'
+  }
+
+  function guid() {
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+  }
+
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+
   function findEmployeesIndexById(id) {
     if (!id) return null;
     let index = -1;
@@ -44,6 +60,19 @@ export function AppRun(
 
     return index;
   }
+
+  $httpBackend.whenPOST(host + "/api/login").respond(function(method, url, params?: string) {
+    console.log("POST -> " + url);
+    let obj = JSON.parse(params);
+    if(user.email != obj.email) {
+      return [422, "Unprocessable Entity", {}, 'Email not found!']
+    } else if (user.password != obj.password) {
+      return [422, "Unprocessable Entity", {}, 'Password is invalid!']
+    }
+
+    let token = guid();
+    return [200, token];
+  } );
 
   $httpBackend.whenGET(host + '/api/employees').respond((method, url, data) => {
     if(employeesList.length != 0) {
@@ -95,9 +124,7 @@ export function AppRun(
     let parts = url.split("/");
     let id = parts[parts.length - 1];
     let index = findEmployeesIndexById(id);
-    // if (parts.length != 2) {
-    //   return [409, "invalid id"];
-    // }
+
     if (index != -1) {
       employeesList.splice(index, 1);
       return [200, 'SUCCESS!!'];
