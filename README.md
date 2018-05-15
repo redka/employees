@@ -1,15 +1,12 @@
-# Employees CRUD
+# Introduction
+Employees CRUD(create, read, update, delete)
+AngularJS, TypeScript
 
-This project use a simple stack : webpack, typescript, sass
+# How to start
 
-## Install
-
-`yarn install`
-
-## Serve
-
-`npm start`
-
-## Build
-
-`npm run build`
+```bash
+git clone git@github.com:redka/employees.git
+cd employees
+yarn install
+yarn start
+```
