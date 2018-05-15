@@ -10,7 +10,6 @@
         <md-input-container class="md-block">
           <label>E-mail</label>
           <input type="email" name="email" ng-model="$ctrl.user.email" required=""/>
-          <!--<p>{{Form.email.$error}}</p>-->
           <div ng-messages="Form.email.$error" role="alert">
             <div ng-message="required" class="my-message">Please enter your email.</div>
           </div>

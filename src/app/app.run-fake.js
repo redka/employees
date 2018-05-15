@@ -163,6 +163,7 @@ function AppRunFakeBack($httpBackend) {
         return [200, token];
     });
     $httpBackend.whenGET(/\/api\/employees[\?search=]?.*/).respond(function (method, url, data) {
+        console.log("GET -> " + url);
         if (employeesList.length != 0) {
             var searchValue_1 = url.split("search=");
             var simpleUrl = url.split("/");
@@ -192,51 +193,7 @@ function AppRunFakeBack($httpBackend) {
             }
         }
         return [404, "NOT-FOUND"];
-        // if(employeesList.length != 0) {
-        //   // let parts = url.split("/");
-        // let id = parts[parts.length - 1];
-        // let index = findEmployeesIndexById(id);
-        // if (index != -1) {
-        //   return [200, employeesList[index]];
-        // }
-        //   let searchValue = url.split("search=");
-        //   let editUrl = url.split("/");
-        //   console.log('searchValue->', searchValue, 'editUrl->',editUrl)
-        //
-        //   if(searchValue.length == 2) {
-        //     let filterEmployees = employeesList.filter((item) => {
-        //       if (item.fullName.indexOf(searchValue[1]) != -1) {
-        //         return item;
-        //       }
-        //     });
-        //
-        //     if(filterEmployees.length == 0) {
-        //       return [204, "No Content"];
-        //     } else if (filterEmployees.length > 0) {
-        //       return [200, filterEmployees.slice()];
-        //     }
-        //
-        //
-        //     console.log('filterEmployees', filterEmployees);
-        //   } else {
-        //     return [200, employeesList.slice()];
-        //   }
-        //
-        // } else if (employeesList.length == 0) {
-        //   return [204, "No Content"];
-        // }
-        // return [404, "NOT-FOUND"];
     });
-    // $httpBackend.whenGET(/\/api\/employees\/.*/).respond((method, url, data) => {
-    //   let parts = url.split("/");
-    //   let id = parts[parts.length - 1];
-    //   let index = findEmployeesIndexById(id);
-    //   if (index != -1) {
-    //     return [200, employeesList[index]];
-    //   }
-    //
-    //   return [404, "NOT-FOUND"];
-    // } );
     $httpBackend.whenPOST(host + "/api/employees").respond(function (method, url, params) {
         console.log("POST -> " + url);
         var o = JSON.parse(params);

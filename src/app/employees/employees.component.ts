@@ -61,7 +61,6 @@ export const EmployeesComponent = {
     }
 
     search() {
-      console.log('searchEmployee', this.searchEmployee);
       this.EmployeesService.getAllEmployees(this.searchEmployee)
         .then((success) => {
           if(success['status'] != 204) {

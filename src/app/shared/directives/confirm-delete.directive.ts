@@ -26,8 +26,8 @@ export class ConfirmDeleteDirective implements angular.IDirective {
         this.$timeout(() => {
           scope.$eval(attrs.confirmDeleteClick);
         }, 0);
-      }, function(er) {
-        console.log('No', er);
+      }, function(no) {
+        console.log('No', no);
       });
     });
 

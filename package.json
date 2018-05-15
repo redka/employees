@@ -1,6 +1,6 @@
 {
   "name": "employees-crud",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "server": "webpack-dev-server --config webpack/webpack.dev.js --watch --NODE_ENV=dev",
     "start": "npm run server",

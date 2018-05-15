@@ -16,8 +16,8 @@ var ConfirmDeleteDirective = (function () {
                     _this.$timeout(function () {
                         scope.$eval(attrs.confirmDeleteClick);
                     }, 0);
-                }, function (er) {
-                    console.log('No', er);
+                }, function (no) {
+                    console.log('No', no);
                 });
             });
         };

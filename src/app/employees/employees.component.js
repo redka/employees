@@ -48,7 +48,6 @@ exports.EmployeesComponent = {
         };
         EmployeesComponent.prototype.search = function () {
             var _this = this;
-            console.log('searchEmployee', this.searchEmployee);
             this.EmployeesService.getAllEmployees(this.searchEmployee)
                 .then(function (success) {
                 if (success['status'] != 204) {
