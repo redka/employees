@@ -55,19 +55,40 @@
           </tr>
         </tbody>
       </table>
-      <div layout-gt-sm="row" layout-align="center center" ng-if="$ctrl.employees.length" class="pagination">
+      <!--<div layout-gt-sm="row" layout-align="center center" ng-if="$ctrl.employees.length" class="pagination">-->
 
-        <md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-click="$ctrl.loadNext(-1)" ng-class="{'c-pagination__previus--disabled': !isCanPrevious()}">
+        <!--<md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-click="$ctrl.loadNext(-1)" ng-class="{'c-pagination__previus&#45;&#45;disabled': !isCanPrevious()}">-->
+          <!--<a><</a>-->
+        <!--</md-button>-->
+
+        <!--<md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-repeat="step in $ctrl.paginLine track by $index">-->
+          <!--<a ng-click="$ctrl.loadPage(step)" ng-class="{'c-pagination__active': $ctrl.current_page == step}">{{step}}</a>-->
+        <!--</md-button>-->
+
+        <!--<md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-click="$ctrl.loadNext(+1)" ng-class="{'c-pagination__next&#45;&#45;disabled': !$ctrl.isCanNext()}"">-->
+          <!--<a>></a>-->
+        <!--</md-button>-->
+
+      <!--</div>-->
+
+      <div layout-gt-sm="row" layout-align="center center" ng-if="$ctrl.pager.pages.length" class="pagination">
+
+        <md-button class="md-fab md-primary md-mini" ng-disabled="$ctrl.pager.currentPage === 1" ng-click="$ctrl.setPage(1)">
+          <a><<</a>
+        </md-button>
+        <md-button class="md-fab md-primary md-mini" ng-disabled="$ctrl.pager.currentPage === 1" ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">
           <a><</a>
         </md-button>
-
-        <md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-repeat="step in $ctrl.paginLine track by $index">
-          <a ng-click="$ctrl.loadPage(step)" ng-class="{'c-pagination__active': $ctrl.current_page == step}">{{step}}</a>
+        <md-button class="md-fab md-primary md-mini" ng-repeat="page in $ctrl.pager.pages" ng-class="{active: $ctrl.pager.currentPage === page}" ng-click="$ctrl.setPage(page)">
+          <a>{{page}}</a>
         </md-button>
-
-        <md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-click="$ctrl.loadNext(+1)" ng-class="{'c-pagination__next--disabled': !$ctrl.isCanNext()}"">
+        <md-button class="md-fab md-primary md-mini" ng-disabled="$ctrl.pager.currentPage === $ctrl.pager.totalPages" ng-click="$ctrl.setPage( $ctrl.pager.currentPage + 1)">
           <a>></a>
         </md-button>
+        <md-button class="md-fab md-primary md-mini" ng-disabled="$ctrl.pager.currentPage === $ctrl.pager.totalPages" ng-click="$ctrl.setPage($ctrl.pager.totalPages)">
+          <a>>></a>
+        </md-button>
+
 
       </div>
 
