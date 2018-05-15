@@ -14,6 +14,7 @@ import { AppRouting } from './app.routing';
 import { AppRun} from "./app.run";
 import { EditEmployeeModule } from "./edit-employee/edit-employee.module";
 import { CreateEmployeeModule } from "./create-employee/create-employee.module";
+import { AppRunFakeBack } from "./app.run-fake";
 
 export const AppModule = angular
   .module('app', [
@@ -29,4 +30,5 @@ export const AppModule = angular
   .component('appRoot', AppComponent)
   .config(AppRouting)
   .run(AppRun)
+  .run(AppRunFakeBack)
   .name;

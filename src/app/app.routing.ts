@@ -8,15 +8,24 @@ export function AppRouting(
   $stateProvider
     .state('employees', {
       url: '/employees',
-      component: 'employees'
+      component: 'employees',
+      data: {
+        authorizedOnly: true
+      }
     })
     .state('editEmployee', {
       url: '/employees/:id',
-      component: 'editEmployee'
+      component: 'editEmployee',
+      data: {
+        authorizedOnly: true
+      }
     })
     .state('createEmployee', {
       url: '/employees/create',
-      component: 'createEmployee'
+      component: 'createEmployee',
+      data: {
+        authorizedOnly: true
+      }
     })
     .state('login', {
       url: '/login',

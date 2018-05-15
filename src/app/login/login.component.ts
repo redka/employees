@@ -33,6 +33,7 @@ export const LoginComponent = {
           password: this.user.password
         })
           .then((success) => {
+            console.log(success)
             if (success.status === 422) {
               this.serverError = success.statusText;
               this.$timeout(() => {

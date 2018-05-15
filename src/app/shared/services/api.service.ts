@@ -11,17 +11,32 @@ const API: IApi = {
 export class ApiService {
   $http: angular.IHttpService;
   $cookies: angular.cookies.ICookiesService;
+  private _token: string;
 
   constructor($http, $cookies) {
     this.$http = $http;
     this.$cookies = $cookies;
   }
 
+
+
+  get token(): string {
+    return this._token;
+  }
+
+  setToken(t) {
+    this._token = t;
+    this.$cookies.put('token', t);
+  }
+
+  get isExists() {
+    return !!this._token;
+  }
+
   login({email, password}) {
     return this.$http.post(API.url + '/login', { email, password })
       .then((res) => {
-        let token: any = res.data;
-        this.$cookies.put('token', token);
+        this.setToken(res.data);
         return true;
       })
       .catch(err => {
@@ -30,6 +45,7 @@ export class ApiService {
   };
 
   logout() {
+    this._token = null;
     this.$cookies.remove('token');
   };
 

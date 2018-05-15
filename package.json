@@ -36,6 +36,7 @@
     "angular-material": "^1.1.9",
     "angular-messages": "^1.7.0",
     "angular-ui-router": "^1.0.3",
-    "angular-mocks": "^1.7.0"
+    "angular-mocks": "^1.7.0",
+    "angular-route": "^1.7.0"
   }
 }
