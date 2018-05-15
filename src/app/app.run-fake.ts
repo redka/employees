@@ -175,42 +175,86 @@ export function AppRunFakeBack(
   $httpBackend.whenGET(/\/api\/employees[\?search=]?.*/).respond((method, url, data) => {
     if(employeesList.length != 0) {
       let searchValue = url.split("search=");
+      let simpleUrl = url.split("/");
 
-      if(searchValue.length == 2) {
+      console.log('simpleUrl.length', simpleUrl, searchValue)
+      if(simpleUrl.length == 5 && searchValue.length == 1) {
+        return [200, employeesList.slice()];
+      }
+
+      else if (simpleUrl.length == 6 && searchValue.length == 1) {
+        let id = simpleUrl[simpleUrl.length - 1];
+        let index = findEmployeesIndexById(id);
+        if (index != -1) {
+          return [200, employeesList[index]];
+        }
+      }
+
+      else if (searchValue.length == 2) {
+
         let filterEmployees = employeesList.filter((item) => {
           if (item.fullName.indexOf(searchValue[1]) != -1) {
             return item;
           }
         });
-
         if(filterEmployees.length == 0) {
           return [204, "No Content"];
         } else if (filterEmployees.length > 0) {
           return [200, filterEmployees.slice()];
         }
-
-
-        console.log('filterEmployees', filterEmployees);
-      } else {
-        return [200, employeesList.slice()];
       }
 
-    } else if (employeesList.length == 0) {
-      return [204, "No Content"];
+
     }
     return [404, "NOT-FOUND"];
-  } );
 
-  $httpBackend.whenGET(/\/api\/employees\/.*/).respond((method, url, data) => {
-    let parts = url.split("/");
-    let id = parts[parts.length - 1];
-    let index = findEmployeesIndexById(id);
-    if (index != -1) {
-      return [200, employeesList[index]];
-    }
 
-    return [404, "NOT-FOUND"];
-  } );
+    // if(employeesList.length != 0) {
+    //   // let parts = url.split("/");
+      // let id = parts[parts.length - 1];
+      // let index = findEmployeesIndexById(id);
+      // if (index != -1) {
+      //   return [200, employeesList[index]];
+      // }
+    //   let searchValue = url.split("search=");
+    //   let editUrl = url.split("/");
+    //   console.log('searchValue->', searchValue, 'editUrl->',editUrl)
+    //
+    //   if(searchValue.length == 2) {
+    //     let filterEmployees = employeesList.filter((item) => {
+    //       if (item.fullName.indexOf(searchValue[1]) != -1) {
+    //         return item;
+    //       }
+    //     });
+    //
+    //     if(filterEmployees.length == 0) {
+    //       return [204, "No Content"];
+    //     } else if (filterEmployees.length > 0) {
+    //       return [200, filterEmployees.slice()];
+    //     }
+    //
+    //
+    //     console.log('filterEmployees', filterEmployees);
+    //   } else {
+    //     return [200, employeesList.slice()];
+    //   }
+    //
+    // } else if (employeesList.length == 0) {
+    //   return [204, "No Content"];
+    // }
+    // return [404, "NOT-FOUND"];
+  });
+
+  // $httpBackend.whenGET(/\/api\/employees\/.*/).respond((method, url, data) => {
+  //   let parts = url.split("/");
+  //   let id = parts[parts.length - 1];
+  //   let index = findEmployeesIndexById(id);
+  //   if (index != -1) {
+  //     return [200, employeesList[index]];
+  //   }
+  //
+  //   return [404, "NOT-FOUND"];
+  // } );
 
   $httpBackend.whenPOST(host + "/api/employees").respond(function(method, url, params?: string) {
     console.log("POST -> " + url);

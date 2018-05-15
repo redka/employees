@@ -65,7 +65,7 @@ export const EmployeesComponent = {
       this.EmployeesService.getAllEmployees(this.searchEmployee)
         .then((success) => {
           if(success['status'] != 204) {
-            this.employees = [];
+            this.fullEmployees = [];
             this.$timeout(() => {
               this.fullEmployees = success['data'];
               this.setPage(1);

@@ -10,13 +10,11 @@ export const EditEmployeeComponent = {
     employee: Employee;
     EmployeesService: ApiService;
     $location: angular.ILocationService;
-    // $routeParams: angular.ui.IStateService;
     idParam: any;
 
     constructor(ApiService, $location) {
       this.EmployeesService = ApiService;
       this.$location = $location;
-      // this.$routeParams = $routeParams;
       this.idParam = this.$location.path().split("/");
       this.getEmployee();
     }
