@@ -34,91 +34,91 @@ function AppRunFakeBack($httpBackend) {
         },
         {
             "id": "6",
-            "fullName": "Redka Vasyl",
+            "fullName": "Petro Zagordniy",
             "department": "Development",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "7",
-            "fullName": "Maks Face",
+            "fullName": "Ivan Ivanov",
             "department": "Marketing",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "8",
-            "fullName": "Masha One",
+            "fullName": "Slava Prokopenko",
             "department": "Design",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "9",
-            "fullName": "Andrey",
+            "fullName": "Galuna Demchuk",
             "department": "Development",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "10",
-            "fullName": "Roma Derman",
+            "fullName": "Vadym Chornyi",
             "department": "Design",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "11",
-            "fullName": "Redka Vasyl",
+            "fullName": "Vova Lutva",
             "department": "Development",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "12",
-            "fullName": "Maks Face",
+            "fullName": "Diana Melnyk",
             "department": "Marketing",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "13",
-            "fullName": "Masha One",
+            "fullName": "Dasha Kuznetsova",
             "department": "Design",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "14",
-            "fullName": "Andrey",
+            "fullName": "Anna Pavlova",
             "department": "Development",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "15",
-            "fullName": "Roma Derman",
+            "fullName": "Taras Shevchenko",
             "department": "Design",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "16",
-            "fullName": "Redka Vasyl",
+            "fullName": "Ivan Karpenko",
             "department": "Development",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "17",
-            "fullName": "Maks Face",
+            "fullName": "Borys Vasyliuk",
             "department": "Marketing",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "18",
-            "fullName": "Masha One",
+            "fullName": "Olya Viter",
             "department": "Design",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "19",
-            "fullName": "Andrey",
+            "fullName": "Bogdan Savchenko",
             "department": "Development",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         },
         {
             "id": "20",
-            "fullName": "Roma Derman",
+            "fullName": "Svitlana Soroka",
             "department": "Design",
             "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
         }
