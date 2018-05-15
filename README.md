@@ -10,3 +10,8 @@ cd employees
 yarn install
 yarn start
 ```
+
+#﻿Credentials of account
+
+Email: example@me
+Password: password
