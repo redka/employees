@@ -28,16 +28,21 @@ exports.EmployeesComponent = {
             });
         };
         EmployeesComponent.prototype.setPage = function (page) {
+            var _this = this;
+            this.employees = [];
             if (page < 1 || page > this.pager.totalPages) {
                 return;
             }
-            this.pager = this.PaginationService.getPages(this.fullEmployees.length, page, 5);
-            this.employees = this.fullEmployees.slice(this.pager.startIndex, this.pager.endIndex + 1);
+            this.$timeout(function () {
+                _this.pager = _this.PaginationService.getPages(_this.fullEmployees.length, page, 5);
+                _this.employees = _this.fullEmployees.slice(_this.pager.startIndex, _this.pager.endIndex + 1);
+            }, 400);
         };
         EmployeesComponent.prototype.delete = function (id) {
             var _this = this;
             this.EmployeesService.deleteEmployee(id)
                 .then(function (success) {
+                _this.employees = [];
                 var index = success['data'].index;
                 _this.fullEmployees.splice(index, 1);
                 _this.setPage(1);
@@ -51,11 +56,11 @@ exports.EmployeesComponent = {
             this.EmployeesService.getAllEmployees(this.searchEmployee)
                 .then(function (success) {
                 if (success['status'] != 204) {
-                    _this.fullEmployees = [];
+                    _this.employees = [];
                     _this.$timeout(function () {
                         _this.fullEmployees = success['data'];
                         _this.setPage(1);
-                    }, 600);
+                    }, 400);
                 }
                 else {
                     alert('No Content');

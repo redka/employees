@@ -180,7 +180,9 @@ function AppRunFakeBack($httpBackend) {
             }
             else if (searchValue_1.length == 2) {
                 var filterEmployees = employeesList.filter(function (item) {
-                    if (item.fullName.indexOf(searchValue_1[1]) != -1) {
+                    var fullName = item.fullName.toLowerCase();
+                    var searchFullName = searchValue_1[1].toLowerCase();
+                    if (fullName.indexOf(searchFullName) != -1) {
                         return item;
                     }
                 });

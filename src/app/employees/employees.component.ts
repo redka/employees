@@ -41,16 +41,21 @@ export const EmployeesComponent = {
     }
 
     setPage(page) {
+      this.employees = [];
       if (page < 1 || page > this.pager.totalPages) {
         return;
       }
-      this.pager = this.PaginationService.getPages(this.fullEmployees.length, page, 5);
-      this.employees = this.fullEmployees.slice(this.pager.startIndex, this.pager.endIndex + 1);
+
+      this.$timeout(() => {
+        this.pager = this.PaginationService.getPages(this.fullEmployees.length, page, 5);
+        this.employees = this.fullEmployees.slice(this.pager.startIndex, this.pager.endIndex + 1);
+      }, 400);
     }
 
     delete(id) {
       this.EmployeesService.deleteEmployee(id)
         .then((success) => {
+          this.employees = [];
           let index = success['data'].index;
           this.fullEmployees.splice(index, 1);
           this.setPage(1);
@@ -64,11 +69,11 @@ export const EmployeesComponent = {
       this.EmployeesService.getAllEmployees(this.searchEmployee)
         .then((success) => {
           if(success['status'] != 204) {
-            this.fullEmployees = [];
+            this.employees = [];
             this.$timeout(() => {
               this.fullEmployees = success['data'];
               this.setPage(1);
-            }, 600);
+            }, 400);
 
           } else {
             alert('No Content');

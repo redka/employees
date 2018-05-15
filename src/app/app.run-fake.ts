@@ -194,7 +194,10 @@ export function AppRunFakeBack(
       else if (searchValue.length == 2) {
 
         let filterEmployees = employeesList.filter((item) => {
-          if (item.fullName.indexOf(searchValue[1]) != -1) {
+          let fullName = item.fullName.toLowerCase();
+          let searchFullName = searchValue[1].toLowerCase()
+
+          if (fullName.indexOf(searchFullName) != -1) {
             return item;
           }
         });

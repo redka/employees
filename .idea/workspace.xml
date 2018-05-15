@@ -5,6 +5,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.run-fake.js" afterPath="$PROJECT_DIR$/src/app/app.run-fake.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.run-fake.ts" afterPath="$PROJECT_DIR$/src/app/app.run-fake.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/employees/employees.component.html" afterPath="$PROJECT_DIR$/src/app/employees/employees.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/employees/employees.component.js" afterPath="$PROJECT_DIR$/src/app/employees/employees.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/employees/employees.component.ts" afterPath="$PROJECT_DIR$/src/app/employees/employees.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,21 +21,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="employees.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/employees/employees.component.ts">
+      <file leaf-file-name="employees.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/employees/employees.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="47" column="96" lean-forward="true" selection-start-line="46" selection-start-column="87" selection-end-line="47" selection-end-column="96" />
+            <state relative-caret-position="183">
+              <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.run-fake.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="employees.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/employees/employees.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="75" column="18" lean-forward="false" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-employee.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/create-employee/create-employee.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-employee.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/create-employee/create-employee.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.run-fake.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.run-fake.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+            <state relative-caret-position="-96">
+              <caret line="199" column="45" lean-forward="false" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -63,6 +98,7 @@
       <find>.length</find>
       <find>generatePagin</find>
       <find>profileEmployee</find>
+      <find>indexOf</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/app</dir>
@@ -113,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/src/app/profile-employee/profile-employee.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/employees/employees.component.html" />
         <option value="$PROJECT_DIR$/src/app/profile-employee/profile-employee.component.html" />
         <option value="$PROJECT_DIR$/src/app/profile-employee/profile-employee.component.ts" />
         <option value="$PROJECT_DIR$/src/app/edit-employee/edit-employee.component.ts" />
@@ -121,8 +156,9 @@
         <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/app/shared/directives/confirm-delete.directive.ts" />
         <option value="$PROJECT_DIR$/src/app/login/login.component.html" />
-        <option value="$PROJECT_DIR$/src/app/employees/employees.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.run-fake.ts" />
+        <option value="$PROJECT_DIR$/src/app/employees/employees.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/employees/employees.component.html" />
       </list>
     </option>
   </component>
@@ -177,6 +213,20 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="employees" type="b2602c69:ProjectViewProjectNode" />
+              <item name="employees" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="create-employee" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="employees" type="b2602c69:ProjectViewProjectNode" />
+              <item name="employees" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="employees" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -218,12 +268,12 @@
       <workItem from="1526056421578" duration="55512000" />
       <workItem from="1526296793008" duration="20370000" />
       <workItem from="1526333253799" duration="30693000" />
-      <workItem from="1526412782593" duration="4224000" />
+      <workItem from="1526412782593" duration="4946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113350000" />
+    <option name="totallyTimeSpent" value="114072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="721" extended-state="6" />
@@ -567,14 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/employees/employees.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/employees/employees.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -596,7 +638,7 @@
         <state relative-caret-position="225">
           <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -625,10 +667,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/create-employee/create-employee.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/create-employee/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/employees/employees.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="75" column="18" lean-forward="false" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -643,26 +693,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/create-employee/index.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/create-employee/create-employee.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/employees/employees.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="47" column="96" lean-forward="true" selection-start-line="46" selection-start-column="87" selection-end-line="47" selection-end-column="96" />
+        <state relative-caret-position="133">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.run-fake.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+        <state relative-caret-position="-96">
+          <caret line="199" column="45" lean-forward="false" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/employees/employees.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="36" />
           <folding />
         </state>
       </provider>
