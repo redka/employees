@@ -6,32 +6,62 @@ export function AppRunFakeBack(
   let employeesList = [
     {
       "id": "1",
-      "fullName": "Redka Vasylqqw",
-      "department": "developmentertertert",
+      "fullName": "Redka Vasyl",
+      "department": "Development",
       "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
     },
     {
       "id": "2",
-      "fullName": "JPgfdgdfgdfg",
-      "department": "developmentgfdgdfgdfg",
+      "fullName": "Maks Face",
+      "department": "Marketing",
       "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
     },
     {
       "id": "3",
-      "fullName": "JPgfdgdfgdfg",
-      "department": "developmentgfdgdfgdfg",
+      "fullName": "Masha One",
+      "department": "Design",
       "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
     },
     {
       "id": "4",
-      "fullName": "JPgfdgdfgdfg",
-      "department": "developmentgfdgdfgdfg",
+      "fullName": "Andrey",
+      "department": "Development",
       "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
     },
     {
       "id": "5",
-      "fullName": "JPgfdgdfgdfg",
-      "department": "developmentgfdgdfgdfg",
+      "fullName": "Roma Derman",
+      "department": "Design",
+      "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
+    },
+    {
+      "id": "6",
+      "fullName": "Redka Vasyl",
+      "department": "Development",
+      "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
+    },
+    {
+      "id": "7",
+      "fullName": "Maks Face",
+      "department": "Marketing",
+      "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
+    },
+    {
+      "id": "8",
+      "fullName": "Masha One",
+      "department": "Design",
+      "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
+    },
+    {
+      "id": "9",
+      "fullName": "Andrey",
+      "department": "Development",
+      "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
+    },
+    {
+      "id": "10",
+      "fullName": "Roma Derman",
+      "department": "Design",
       "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
     },
   ];

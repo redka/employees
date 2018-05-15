@@ -27,3 +27,10 @@ table thead th {
 table tbody td {
   text-align: left !important;
 }
+.pagination{
+  margin: 10px 0;
+
+  .md-button a {
+    color: white;
+  }
+}

@@ -1,8 +1,8 @@
 <div layout="row" layout-align="center center">
 
   <div class="table-employees">
-    <div layout-gt-sm="row" layout-align="center center">
-      <md-input-container style="height: 30px;">
+    <div layout-gt-sm="row" layout-align="space-between center">
+      <md-input-container style="height: 30px; width: 200px;">
         <label>Search for employee</label>
         <input type="search",
                ng-model="$ctrl.searchEmployee",
@@ -55,8 +55,26 @@
           </tr>
         </tbody>
       </table>
+      <div layout-gt-sm="row" layout-align="center center" ng-if="$ctrl.employees.length" class="pagination">
+
+        <md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-click="$ctrl.loadNext(-1)" ng-class="{'c-pagination__previus--disabled': !isCanPrevious()}">
+          <a><</a>
+        </md-button>
+
+        <md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-repeat="step in $ctrl.paginLine track by $index">
+          <a ng-click="$ctrl.loadPage(step)" ng-class="{'c-pagination__active': $ctrl.current_page == step}">{{step}}</a>
+        </md-button>
+
+        <md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-click="$ctrl.loadNext(+1)" ng-class="{'c-pagination__next--disabled': !$ctrl.isCanNext()}"">
+          <a>></a>
+        </md-button>
+
+      </div>
+
+
+
+
     </div>
   </div>
 </div>
 
-<!--<confirm-delete></confirm-delete>-->
