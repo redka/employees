@@ -48,31 +48,15 @@
             <td class="mdl-data-table__cell--non-numeric">
               <span ng-bind="item.id"></span>
             </td>
-            <td ng-bind="item.fullName"></td>
+            <td><a ng-bind="item.fullName" ui-sref="profileEmployee({ id: item.id })"></a></td>
             <td ng-bind="item.department"></td>
             <td><md-button class="md-primary" ui-sref="editEmployee({ id: item.id })">Edit</md-button></td>
             <td><md-button class="md-primary" confirm-delete confirm-delete-click="$ctrl.delete(item.id)">Delete</md-button></td>
           </tr>
         </tbody>
       </table>
-      <!--<div layout-gt-sm="row" layout-align="center center" ng-if="$ctrl.employees.length" class="pagination">-->
-
-        <!--<md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-click="$ctrl.loadNext(-1)" ng-class="{'c-pagination__previus&#45;&#45;disabled': !isCanPrevious()}">-->
-          <!--<a><</a>-->
-        <!--</md-button>-->
-
-        <!--<md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-repeat="step in $ctrl.paginLine track by $index">-->
-          <!--<a ng-click="$ctrl.loadPage(step)" ng-class="{'c-pagination__active': $ctrl.current_page == step}">{{step}}</a>-->
-        <!--</md-button>-->
-
-        <!--<md-button ng-disabled="$ctrl.paginLine.length <= 1" class="md-fab md-primary md-mini" ng-click="$ctrl.loadNext(+1)" ng-class="{'c-pagination__next&#45;&#45;disabled': !$ctrl.isCanNext()}"">-->
-          <!--<a>></a>-->
-        <!--</md-button>-->
-
-      <!--</div>-->
 
       <div layout-gt-sm="row" layout-align="center center" ng-if="$ctrl.pager.pages.length" class="pagination">
-
         <md-button class="md-fab md-primary md-mini" ng-disabled="$ctrl.pager.currentPage === 1" ng-click="$ctrl.setPage(1)">
           <a><<</a>
         </md-button>
@@ -88,12 +72,7 @@
         <md-button class="md-fab md-primary md-mini" ng-disabled="$ctrl.pager.currentPage === $ctrl.pager.totalPages" ng-click="$ctrl.setPage($ctrl.pager.totalPages)">
           <a>>></a>
         </md-button>
-
-
       </div>
-
-
-
 
     </div>
   </div>

@@ -13,6 +13,7 @@ var app_run_1 = require("./app.run");
 var edit_employee_module_1 = require("./edit-employee/edit-employee.module");
 var create_employee_module_1 = require("./create-employee/create-employee.module");
 var app_run_fake_1 = require("./app.run-fake");
+var profile_employee_module_1 = require("./profile-employee/profile-employee.module");
 exports.AppModule = angular
     .module('app', [
     'ui.router',
@@ -22,7 +23,8 @@ exports.AppModule = angular
     _2.LoginModule,
     _3.SharedModule,
     edit_employee_module_1.EditEmployeeModule,
-    create_employee_module_1.CreateEmployeeModule
+    create_employee_module_1.CreateEmployeeModule,
+    profile_employee_module_1.ProfileEmployeeModule
 ])
     .component('appRoot', app_component_1.AppComponent)
     .config(app_routing_1.AppRouting)

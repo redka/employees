@@ -15,6 +15,7 @@ import { AppRun} from "./app.run";
 import { EditEmployeeModule } from "./edit-employee/edit-employee.module";
 import { CreateEmployeeModule } from "./create-employee/create-employee.module";
 import { AppRunFakeBack } from "./app.run-fake";
+import { ProfileEmployeeModule } from "./profile-employee/profile-employee.module";
 
 export const AppModule = angular
   .module('app', [
@@ -25,7 +26,8 @@ export const AppModule = angular
     LoginModule,
     SharedModule,
     EditEmployeeModule,
-    CreateEmployeeModule
+    CreateEmployeeModule,
+    ProfileEmployeeModule
   ])
   .component('appRoot', AppComponent)
   .config(AppRouting)

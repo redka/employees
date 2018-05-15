@@ -20,6 +20,13 @@ export function AppRouting(
         authorizedOnly: true
       }
     })
+    .state('profileEmployee', {
+      url: '/employees/profile/:id',
+      component: 'profileEmployee',
+      data: {
+        authorizedOnly: true
+      }
+    })
     .state('createEmployee', {
       url: '/employees/create',
       component: 'createEmployee',

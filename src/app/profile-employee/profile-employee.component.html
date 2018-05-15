@@ -1,0 +1,31 @@
+<form ng-cloak>
+  <div class="md-toolbar-tools">
+    <h4>Profile</h4>
+  </div>
+
+  <md-dialog-content>
+    <div class="md-dialog-content">
+
+      <md-input-container class="md-block">
+        <label>Full Name</label>
+        <input disabled ng-model="$ctrl.employee.fullName">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Department</label>
+        <input disabled ng-model="$ctrl.employee.department">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Notes</label>
+        <input disabled ng-model="$ctrl.employee.notes">
+      </md-input-container>
+
+    </div>
+  </md-dialog-content>
+
+  <!-- dialog box buttons -->
+  <md-dialog-actions layout="row">
+    <md-button ui-sref="employees">Back</md-button>
+  </md-dialog-actions>
+</form>

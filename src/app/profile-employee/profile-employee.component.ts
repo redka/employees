@@ -3,9 +3,9 @@ import * as angular from 'angular';
 import {ApiService} from "../shared/services/api.service";
 import {Employee} from "../shared/services/employee.interface";
 
-export const EditEmployeeComponent = {
-  template: require('./edit-employee.component.html'),
-  controller: class EditEmployeeComponent {
+export const ProfileEmployeeComponent = {
+  template: require('./profile-employee.component.html'),
+  controller: class ProfileEmployeeComponent {
     employee: Employee;
     EmployeesService: ApiService;
     $location: angular.ILocationService;
@@ -23,16 +23,6 @@ export const EditEmployeeComponent = {
       this.EmployeesService.getEmployee(this.idParam[this.idParam.length - 1])
         .then((success) => {
           this.employee = success['data'];
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
-
-    edit() {
-      this.EmployeesService.updateEmployee(this.employee)
-        .then(() => {
-          this.$location.path('/employees');
         })
         .catch(err => {
           console.log(err);
