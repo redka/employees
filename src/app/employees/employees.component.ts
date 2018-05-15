@@ -6,10 +6,13 @@ export const EmployeesComponent = {
   controller: class EmployeesComponent {
     employees: Employee[];
     EmployeesService: ApiService;
+    searchEmployee: string;
+    $timeout: angular.ITimeoutService;
 
-    constructor(ApiService) {
+    constructor(ApiService, $timeout) {
       this.EmployeesService = ApiService;
       this.getEmployees();
+      this.$timeout = $timeout;
     }
 
     getEmployees() {
@@ -33,6 +36,26 @@ export const EmployeesComponent = {
         .then((success) => {
           let index = success['data'].index;
           this.employees.splice(index, 1);
+
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+
+    search() {
+      console.log('searchEmployee', this.searchEmployee);
+      this.EmployeesService.getAllEmployees(this.searchEmployee)
+        .then((success) => {
+          if(success['status'] != 204) {
+            this.employees = [];
+            this.$timeout(() => {
+              this.employees = success['data'];
+            }, 600);
+
+          } else {
+            alert('No Content');
+          }
 
         })
         .catch(err => {

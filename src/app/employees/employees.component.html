@@ -1,9 +1,20 @@
 <div layout="row" layout-align="center center">
 
   <div class="table-employees">
-    <div layout-gt-sm="row" layout-align="right">
+    <div layout-gt-sm="row" layout-align="center center">
+      <md-input-container style="height: 30px;">
+        <label>Search for employee</label>
+        <input type="search",
+               ng-model="$ctrl.searchEmployee",
+               ng-change="$ctrl.search()",
+               ng-minlength="3",
+               ng-maxlength="50",
+               ng-model-options='{ debounce: 400 }'>
+      </md-input-container>
+
       <md-button class="md-raised md-primary" ui-sref="createEmployee">Add</md-button>
     </div>
+
     <div>
       <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
         <thead>

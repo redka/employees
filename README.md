@@ -11,7 +11,7 @@ yarn install
 yarn start
 ```
 
-#﻿Credentials of account
+# Account credentials
 
 Email: example@me
 Password: password

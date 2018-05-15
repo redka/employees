@@ -47,8 +47,8 @@ export class ApiService {
     this.$cookies.remove('token');
   };
 
-  getAllEmployees() {
-    return this.$http.get(API.url + '/employees', {})
+  getAllEmployees(data?) {
+    return this.$http.get(API.url + '/employees', {params: {search: data}})
       .then(res => {
         return res;
       })

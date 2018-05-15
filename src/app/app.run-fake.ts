@@ -15,7 +15,25 @@ export function AppRunFakeBack(
       "fullName": "JPgfdgdfgdfg",
       "department": "developmentgfdgdfgdfg",
       "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
-    }
+    },
+    {
+      "id": "3",
+      "fullName": "JPgfdgdfgdfg",
+      "department": "developmentgfdgdfgdfg",
+      "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
+    },
+    {
+      "id": "4",
+      "fullName": "JPgfdgdfgdfg",
+      "department": "developmentgfdgdfgdfg",
+      "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
+    },
+    {
+      "id": "5",
+      "fullName": "JPgfdgdfgdfg",
+      "department": "developmentgfdgdfgdfg",
+      "notes": "fgfgregjnfjivdfnjdfinvdfvdfivndfvdfv"
+    },
   ];
   let host = 'http://localhost:8080';
 
@@ -64,9 +82,29 @@ export function AppRunFakeBack(
     return [200, token];
   } );
 
-  $httpBackend.whenGET(host + '/api/employees').respond((method, url, data) => {
+  $httpBackend.whenGET(/\/api\/employees[\?search=]?.*/).respond((method, url, data) => {
     if(employeesList.length != 0) {
-      return [200, employeesList.slice()];
+      let searchValue = url.split("search=");
+
+      if(searchValue.length == 2) {
+        let filterEmployees = employeesList.filter((item) => {
+          if (item.fullName.indexOf(searchValue[1]) != -1) {
+            return item;
+          }
+        });
+
+        if(filterEmployees.length == 0) {
+          return [204, "No Content"];
+        } else if (filterEmployees.length > 0) {
+          return [200, filterEmployees.slice()];
+        }
+
+
+        console.log('filterEmployees', filterEmployees);
+      } else {
+        return [200, employeesList.slice()];
+      }
+
     } else if (employeesList.length == 0) {
       return [204, "No Content"];
     }
