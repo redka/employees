@@ -40,7 +40,7 @@
             <td ng-bind="item.fullName"></td>
             <td ng-bind="item.department"></td>
             <td><md-button class="md-primary" ui-sref="editEmployee({ id: item.id })">Edit</md-button></td>
-            <td><md-button class="md-primary" ng-click="$ctrl.delete(item)">Delete</md-button></td>
+            <td><md-button class="md-primary" confirm-delete confirm-delete-click="$ctrl.delete(item.id)">Delete</md-button></td>
           </tr>
         </tbody>
       </table>
@@ -48,4 +48,4 @@
   </div>
 </div>
 
-<confirm-delete></confirm-delete>
+<!--<confirm-delete></confirm-delete>-->

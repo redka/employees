@@ -18,10 +18,8 @@ export class ApiService {
     this.$cookies = $cookies;
   }
 
-
-
-  get token(): string {
-    return this._token;
+  getToken(): string {
+    return this.$cookies.get('token');
   }
 
   setToken(t) {
@@ -30,7 +28,7 @@ export class ApiService {
   }
 
   get isExists() {
-    return !!this._token;
+    return !!this.getToken();
   }
 
   login({email, password}) {
@@ -88,6 +86,16 @@ export class ApiService {
         console.log(err);
       });
   };
+
+  deleteEmployee(data) {
+    return this.$http.delete(API.url + '/employees/' + data)
+      .then(res => {
+        return res;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
 
 

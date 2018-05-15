@@ -1,37 +1,43 @@
 import * as angular from 'angular';
-import {ConfirmDeleteService} from "../services/confirm-delete.service";
 
 export class ConfirmDeleteDirective implements angular.IDirective {
   restrict: string;
-  template = `<div class="confirm">
-                <h4>Are you really want delete?</h4>
-                <button class="md-primary" >No</button>
-                <button class="md-primary" ng-click="confirm()">Yes</button>
-              </div>`;
 
-  constructor() {
-    this.restrict = 'E';
+  constructor(private $mdDialog: angular.material.IDialogService, private $timeout: angular.ITimeoutService) {
+    this.restrict = 'A';
+    this.$mdDialog = $mdDialog;
+    this.$timeout = $timeout;
   }
 
   link = function(
-    scope: angular.IScope,
+    scope: any,
     element: angular.IAugmentedJQuery,
-    attributes: angular.IAttributes
+    attrs: angular.IAttributes
   ) {
-    this.ConfirmDeleteService = new ConfirmDeleteService();
-    element.css({'display': 'none'});
 
-    // scope.$watch(() => { confirmServ.isConfirmShow }, () => {
-    //   console.log('-->', confirmServ.isConfirmShow);
-    // })
-    // console.log('scope', scope)
-    // scope.confirmed = function(){
-    //   console.log('button yes')
-    // }
-    // element.bind('click', function() {
-    //   console.log('directive')
-    //
-    //
-    // });
+    element.bind('click', (ev) => {
+      let confirm = this.$mdDialog.confirm()
+        .title('Are you really want delete?')
+        .targetEvent(ev)
+        .ok('Yes')
+        .cancel('No');
+
+      this.$mdDialog.show(confirm).then((suc) => {
+        this.$timeout(() => {
+          scope.$eval(attrs.confirmDeleteClick);
+        }, 0);
+      }, function(er) {
+        console.log('No', er);
+      });
+    });
+
+  };
+
+  static factory(): angular.IDirectiveFactory {
+    let directive: angular.IDirectiveFactory =
+      ($mdDialog: angular.material.IDialogService, $timeout: angular.ITimeoutService) => new ConfirmDeleteDirective($mdDialog, $timeout);
+    directive.$inject = ["$mdDialog", "$timeout"];
+    return directive;
   }
 }
+

@@ -1,17 +1,14 @@
 import {ApiService} from "../shared/services/api.service";
 import {Employee} from "../shared/services/employee.interface";
-import {ConfirmDeleteService} from "../shared/services/confirm-delete.service";
 
 export const EmployeesComponent = {
   template: require('./employees.component.html'),
   controller: class EmployeesComponent {
     employees: Employee[];
     EmployeesService: ApiService;
-    ConfirmDeleteService: ConfirmDeleteService;
 
-    constructor(ApiService, ConfirmDeleteService) {
+    constructor(ApiService) {
       this.EmployeesService = ApiService;
-      this.ConfirmDeleteService = ConfirmDeleteService;
       this.getEmployees();
     }
 
@@ -31,10 +28,16 @@ export const EmployeesComponent = {
         });
     }
 
-    // delete(item) {
-    //   this.ConfirmDeleteService.show(item, () => {
-    //     console.log('delete confirm', item);
-    //   });
-    // }
+    delete(id) {
+      this.EmployeesService.deleteEmployee(id)
+        .then((success) => {
+          let index = success['data'].index;
+          this.employees.splice(index, 1);
+
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 };

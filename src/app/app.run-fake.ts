@@ -117,7 +117,7 @@ export function AppRunFakeBack(
 
     if (index != -1) {
       employeesList.splice(index, 1);
-      return [200, 'SUCCESS!!'];
+      return [200, {index: index}, {}, 'Success'];
     }
 
     return [404, 'NOT-FOUND!!'];

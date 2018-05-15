@@ -11,9 +11,12 @@ export function AppRun(
 
   $rootScope.$on('$locationChangeStart',  (event, next, current) => {
     let path = next.split("/");
+
     if (path[3] !== 'login' && !ApiService.isExists) {
       event.preventDefault();
       $location.path('/login');
+    } else if(path[3] == 'login' && ApiService.isExists) {
+      $location.path('/employees');
     }
   });
 }
